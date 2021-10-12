@@ -4,7 +4,13 @@ html{
 *, *::before, *::after{
     box-sizing: inherit;
 }
-
+a {
+    text-decoration: none;
+    color: #000000;
+}
+button{
+    border: none;
+}
 /* roboto-regular - latin */
 @font-face {
     font-family: 'Roboto';
@@ -14,43 +20,17 @@ html{
     url('../fonts/roboto-v29-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('../fonts/roboto-v29-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-@media (min-width: 1200px) {
 
-}
-
-/* Landscape tablets and medium desktops */
-@media (min-width: 992px) and (max-width: 1199px) {
-
-}
-
-/* Portrait tablets and small desktops */
-@media (min-width: 768px) and (max-width: 991px) {
-
-}
-
-/* Landscape phones and portrait tablets */
-@media (max-width: 767px) {
-
-}
-
-/* Portrait phones and smaller */
-@media (max-width: 480px) {
-
-}
-
-/* Iphone 5 */
-@media (max-width: 320px) {
-
-}
 body{
     font-family: 'Roboto', serif;
     font-style: normal;
     font-size: 14px;
     font-weight: normal;
     color: #000000;
+    background-color: #f1f1f1;
 }
 .header{
-     position: fixed;
+
      width: 100%;
  }
 
@@ -66,7 +46,10 @@ body{
     margin: 0 auto;
     padding: 25px;
 }
-
+.header-nav{
+    display: flex;
+    align-items: center;
+}
 .header-wrapper{
     display: flex;
     flex-wrap: wrap;
@@ -77,8 +60,65 @@ body{
 .header-list{
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+}
+.header-list-right{
+    display: flex;
+    align-items: center;
+}
+.header-logo{
+    margin-left: 36px;
+}
+.header-item--right-item{
+    margin-right: 14px;
+}
+.site-header-burgerLine{
+    position: relative;
+    display: block;
+    border-bottom: 1px solid;
+
 }
 
+.--top{
+    width: 25px;
+}
+
+.--bottom{
+    width: 20px;
+    bottom: -6px;
+}
+
+.submenu{
+    display: none;
+    width: auto;
+}
+
+.menu > li:hover > .submenu {
+    display: flex;
+    position: relative;
+    background-color: #f1f1f1;
+}
+.item{
+    margin-top: 12px;
+    border-bottom: 1px solid silver;
+}
+.hide-submenu{
+    background: #f1f1f1;
+}
+.burger{
+    display: none;
+    background-color: #f1f1f1;
+}
+.search{
+    display: none;
+}
+.search-btn{
+    background-image: url("../img/svg/search.svg");
+    background-size: 17px auto;
+    width: 17px;
+    height: 20px;
+    border: none;
+}
 .header-item{
     margin-right: 261px;
 }
@@ -91,8 +131,278 @@ body{
     font-size: 14px;
     line-height: 17px;
     text-transform: uppercase;
-    color: #000000;
+
+}
+.alert-myel-message{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.close-alert-msg-btn{
+    position: absolute;
+    left: 98%;
+    top: 1%;
+    background-color: #D8BF95;
 }
 .banner{
+    display: flex;
+}
+
+.banner-img{
     width: 100%;
+}
+.img{
+    width: 100%;
+}
+.banner-context{
+    position: relative;
+    bottom: 50px;
+    left: 35px;
+    height: 18px;
+    color: #fff;
+    text-decoration: underline;
+}
+
+.container{
+    margin: 0 auto;
+    top: 87px;
+    position: relative;
+    max-width: 1312px;
+}
+.content{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.myel-intro-left{
+    font-size: 64px;
+    max-width: 892px;
+}
+
+.myel-intro-right{
+    max-width: 106px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.myel-intro-bottom{
+    margin-top: 31px;
+    font-size: 25px;
+}
+.message{
+    margin-top: 113px;
+    font-size: 24px;
+}
+
+.arrivals{
+    padding-left: 22px;
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.first-arrival{
+    font-size: 16px;
+    font-size: 16px;
+}
+.second-arrival{
+    font-size: 18px;
+}
+.price{
+    display: flex;
+    justify-content: space-between;
+}
+@media ( max-width: 1920px) {
+    .container{
+        margin: 0 auto;
+        top: 87px;
+        position: relative;
+        max-width: 1749px;
+    }
+    .close-alert-msg-btn{
+        position: absolute;
+        left: 97.5%;
+        top: 1.5%;
+        background-color: #D8BF95;
+    }
+}
+@media ( max-width: 1440px) {
+    .container{
+        margin: 0 auto;
+        top: 87px;
+        position: relative;
+        max-width: 1310px;
+    }
+    .close-alert-msg-btn{
+        position: absolute;
+        left: 97.5%;
+        top: 1.5%;
+        background-color: #D8BF95;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container{
+        margin: 0 auto;
+        top: 87px;
+        position: relative;
+        max-width: 1092px;
+    }
+    .burger{
+        display: block;
+        align-items: center;
+        width: 23px;
+        height: 23px;
+        border: none;
+        background-color: #f1f1f1;
+    }
+    .header-nav{
+        display: none;
+    }
+    .search{
+        display: block;
+        float: right;
+    }
+    .container{
+        margin: 0 auto;
+        top: 87px;
+        position: relative;
+        max-width: 902px;
+    }
+    .content{
+        display: block;
+    }
+    .close-alert-msg-btn{
+        position: absolute;
+        left: 97.5%;
+        top: 1.5%;
+        background-color: #D8BF95;
+    }
+}
+
+/* Landscape tablets and medium desktops */
+@media ( max-width: 992px) {
+
+    .container{
+        margin: 0 auto;
+        top: 87px;
+        position: relative;
+        max-width: 902px;
+    }
+    .content{
+        display: block;
+    }
+    .close-alert-msg-btn{
+        position: absolute;
+        left: 97%;
+        top: 1.5%;
+        background-color: #D8BF95;
+    }
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+    .banner {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .container{
+        margin: 0 auto;
+        top: 87px;
+        position: relative;
+        max-width: none;
+    }
+    .content {
+        display: block;
+    }
+    .myel-intro-left{
+        font-size: 48px;
+    }
+    .myel-intro-right{
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+    .close-alert-msg-btn{
+        position: absolute;
+        left: 96%;
+        top: 1.5%;
+        background-color: #D8BF95;
+    }
+}
+@media (max-width: 560px) {
+    .container{
+        margin: 0 auto;
+        top: 87px;
+        position: relative;
+        max-width: none;
+    }
+    .content {
+        display: block;
+    }
+    .myel-intro-left{
+        font-size: 44px;
+    }
+    .myel-intro-right{
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+    .close-alert-msg-btn{
+        position: absolute;
+        left: 95%;
+        top: 2%;
+        background-color: #D8BF95;
+    }
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+    .container{
+        margin: 0 auto;
+        top: 87px;
+        position: relative;
+        max-width: none;
+    }
+    .content {
+        display: block;
+    }
+    .myel-intro-left{
+        font-size: 40px;
+    }
+    .myel-intro-right{
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+    .close-alert-msg-btn{
+        position: absolute;
+        left: 93%;
+        top: 2%;
+        background-color: #D8BF95;
+    }
+}
+
+/* Iphone 5 */
+@media (max-width: 320px) {
+    .container{
+         margin: 0 auto;
+         top: 87px;
+         position: relative;
+         max-width: none;
+     }
+    .content {
+        display: block;
+    }
+    .myel-intro-left{
+        font-size: 36px;
+    }
+
+    .myel-intro-right{
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+    .close-alert-msg-btn{
+        position: absolute;
+        left: 93%;
+        top: 3%;
+        background-color: #D8BF95;
+    }
 }
